@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/wdj/Source/NGServer/.git'
-let g:netrw_dirhist_2='/Users/wdj/blog/wudaijun.github.io/_posts'
-let g:netrw_dirhist_3='/Users/wdj/blog/wudaijun.github.io'
-let g:netrw_dirhist_4='/Applications/MacVim.app/Contents/Resources/vim/runtime'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/wudaijun/Work/GL2/cluster_server_2/config'
+let g:netrw_dirhist_2='/Users/wudaijun/Work/GL2/cluster_server_2'
+let g:netrw_dirhist_3='/Users/wudaijun/Work/GL2/galaxy-legend-2'

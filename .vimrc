@@ -1,11 +1,11 @@
 " 启用pathogen
 call pathogen#infect()
 
-"""""“”“”“”“”“”“”“”“”“”“”“”“”“”“”“”“”“”“”“”“”
+"""""""""""""""""""""""""""""""""""""""""""""
 "               基本配置                    "
 """""""""""""""""""""""""""""""""""""""""""""
 " 设置主题
-colorscheme darkblue
+colorscheme desert
 " 开启语法高亮
 syntax on
 " 忽略输入错误的警告声
@@ -14,6 +14,11 @@ set noeb
 set ts=4
 set sw=4
 filetype indent plugin on
+" 括号自动补全
+inoremap ( ()<ESC>i
+inoremap { {}<ESC>i
+inoremap [ []<ESC>i
+inoremap < <><ESC>i
 " 搜索相关 忽略大小写 高亮
 set ignorecase
 set hlsearch
@@ -59,6 +64,12 @@ func! CompileAbout()
 	endif
 endfunc
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"					erlang相关设置						   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType erlang setlocal et sta sw=2 sts=2
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "		            	python相关设置			     		"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,7 +79,7 @@ autocmd FileType python setlocal et sta sw=4 sts=4
 autocmd FileType python setlocal foldmethod=indent
 set foldlevel=99
 
-""" vim-flack8 设置
+""" vim-flake8 设置 功能: 在python代码中按F7执行代码检查
 " 禁止PyFlakes使用QuickFix,这样在按下<F7>时会调用flack8 在代码编辑时仍有效
 let g:pyflackes_use_quickfix=0
 " 忽略部分错误
@@ -115,9 +126,9 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "						winmanager设置						"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:winManagerWindowLayout='BufExplorer|FileExplorer'
-nmap wm : WMToggle<CR> " 打开winmanager的按键wm
-let g:winManagerWidth = 35 " winmanager宽度 默认为25
+" let g:winManagerWindowLayout='BufExplorer|FileExplorer'
+" nmap wm : WMToggle<CR> " 打开winmanager的按键wm
+" let g:winManagerWidth = 35 " winmanager宽度 默认为25
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "							插件A							"
@@ -128,6 +139,12 @@ nnoremap jp :A<CR>
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"					NERDTree								"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" wm 打开 NERDTree, NERDTree和winmanager选其一
+map wm :NERDTreeToggle<CR> 
 
 " 关闭兼容模式
 set nocompatible
