@@ -124,11 +124,23 @@ if has("cscope")
 	endif
 endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"						winmanager设置						"
+"					winmanager设置							"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:winManagerWindowLayout='BufExplorer|FileExplorer'
-" nmap wm : WMToggle<CR> " 打开winmanager的按键wm
-" let g:winManagerWidth = 35 " winmanager宽度 默认为25
+" winmanager 管理NERDTree 和 BufExplorer 两个窗口 位于左侧
+let g:NERDTree_title='NERD Tree'
+let g:winManagerWindowLayout='NERDTree|BufExplorer'
+
+" 辅助打开 NERDTree
+function! NERDTree_Start()
+   exec 'NERDTree'
+endfunction
+
+function! NERDTree_IsValid()
+	return 1
+endfunction
+
+nmap wm : WMToggle<CR> " 打开winmanager的按键wm
+let g:winManagerWidth = 35 " winmanager宽度 默认为25
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "							插件A							"
@@ -143,8 +155,7 @@ set encoding=utf-8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "					NERDTree								"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" wm 打开 NERDTree, NERDTree和winmanager选其一
-map wm :NERDTreeToggle<CR> 
+" map wm :NERDTreeToggle<CR> 
 
 " 关闭兼容模式
 set nocompatible
