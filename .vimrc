@@ -45,7 +45,15 @@ inoremap<expr><PageUp> pumvisible() ? "\<PageUp>\<C-p>\<C-n>":"\<PageUp>"
 let g:mapleader=","
 
 " 共享剪贴板
-set clipboard+=unnamed
+set clipboard=unnamed
+
+" 快速切换Panel
+nmap <Tab> <C-w>w
+nmap <c-h> <c-w><c-h>
+nmap <c-j> <c-w><c-j>
+nmap <c-k> <c-w><c-k>
+nmap <c-l> <c-w><c-l>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "					方便编译								"
@@ -123,6 +131,7 @@ if has("cscope")
 		cs add ./cscope.out
 	endif
 endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "					winmanager设置							"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
