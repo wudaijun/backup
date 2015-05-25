@@ -152,9 +152,10 @@ nmap wm : WMToggle<CR> " 打开winmanager的按键wm
 let g:winManagerWidth = 35 " winmanager宽度 默认为25
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"							插件A							"
+"					插件A									"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap jp :A<CR>
+"  Ctrl+j+p键实现头/源文件之间跳转	
+nnoremap <c-j><c-p> :A<CR>
 
 " 关于中文显示
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
