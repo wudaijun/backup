@@ -15,10 +15,10 @@ set ts=4
 set sw=4
 filetype indent plugin on
 " 括号自动补全
-inoremap ( ()<ESC>i
-inoremap { {}<ESC>i
-inoremap [ []<ESC>i
-inoremap < <><ESC>i
+" inoremap ( ()<ESC>i
+" inoremap { {}<ESC>i
+" inoremap [ []<ESC>i
+" inoremap < <><ESC>i
 " 搜索相关 忽略大小写 高亮
 set ignorecase
 set hlsearch
