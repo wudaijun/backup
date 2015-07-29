@@ -524,7 +524,7 @@ function! <SID>RepairAltRegister()
 		setlocal nobuflisted
 		setlocal nomodifiable
 		setlocal bufhidden=delete
-		setlocal buftype=nofile
+		setlocal buftype=
 		let tmpBufNum = bufnr('%')
 		exe 'silent! b! '.currentBufferNumber
 		exe 'silent! bwipeout '.tmpBufNum
@@ -900,7 +900,7 @@ function! <SID>GotoNextExplorerInGroup(name, ...)
 	   	exe 'silent! e '.title
 		setlocal nobuflisted
 		setlocal bufhidden=delete
-		setlocal buftype=nofile
+		setlocal buftype=
 		setlocal noswapfile
 
 		" call the Start() function for the next explorer ...
@@ -971,7 +971,7 @@ function! <SID>EditNextVisibleExplorer(grpn, memn, dir, editcmd)
 			" already set, but just to be on the safe side.
 			setlocal nobuflisted
 			setlocal bufhidden=delete
-			setlocal buftype=nofile
+			setlocal buftype=
 			setlocal noswapfile
 
 			" call the Start() function for the next explorer ...
