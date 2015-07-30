@@ -7,7 +7,7 @@ if ! [ -d ~/.oh-my-zsh/.git ]; then
 fi
 
 echo '>> Copy zsh theme ...'
-mv mytheme.zsh-theme ~/.oh-my-zsh/themes/
+ln -s $PWD/mytheme.zsh-theme ~/.oh-my-zsh/themes/mytheme.zsh-theme
 echo '>> Link zsh...'
 rm ~/.zshrc
 ln -s $PWD/zshrc ~/.zshrc
