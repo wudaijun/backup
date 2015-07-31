@@ -7,20 +7,26 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "gmarik/vundle"
+
 Bundle 'winmanager'
+Bundle 'EasyGrep'
+
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jimenezrick/vimerl'
 Bundle 'Valloric/YouCompleteMe'
-" Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'toupeira/vim-desertink'
 
+" Bundle 'scrooloose/syntastic'
 
 """""""""""""""""""""""""""""""""""""""""""""
 "               基本配置                    "
 """""""""""""""""""""""""""""""""""""""""""""
 " 设置主题
-colorscheme desert
+syntax enable
+set background=dark
+colorscheme desertink
 " 开启语法高亮
 syntax on
 " 忽略输入错误的警告声
@@ -48,7 +54,6 @@ set ruler
 set number	
 " 按F2显示/隐藏左侧行号显示
 nnoremap <F2> : set nonumber!<CR>:set foldcolumn=0<CR>
-"set background=dark
 
 "自动补全
 set completeopt+=longest

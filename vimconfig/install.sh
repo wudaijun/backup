@@ -16,8 +16,8 @@ vim +BundleInstall +qa
 
 echo '>> Process YCM ...'
 ycm_path=$path/vim/bundle/YouCompleteMe
-brew install cmake
-$ycm_path/install.sh --clang-completer
+#brew install cmake
+#$ycm_path/install.sh --clang-completer
 rm -rf ~/.ycm_extra_conf.py
 ln -s $path/plugin_config/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
