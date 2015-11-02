@@ -17,8 +17,34 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'toupeira/vim-desertink'
+Bundle "tpope/vim-fugitive"
+Bundle "jlanzarotta/bufexplorer"
 
 " Bundle 'scrooloose/syntastic'
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" 在行末显示空格						    "
+"""""""""""""""""""""""""""""""""""""""""""""
+" show tabs and spaces at the end of line
+set list
+set listchars=""
+if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+	set listchars=tab:»\ 
+	set listchars+=trail:·
+	"set listchars+=eol:¶
+else
+	set listchars=tab:>\ 
+	set listchars+=trail:.
+	"set listchars+=eol:~
+endif
+
+" set indent for diff lang {
+autocmd FileType erlang       set shiftwidth=2 | set expandtab
+autocmd FileType python       set shiftwidth=2 | set expandtab
+autocmd FileType c            set shiftwidth=4 | set expandtab
+autocmd FileType cpp          set shiftwidth=4 | set expandtab
+autocmd FileType lua          set shiftwidth=4 | set expandtab
+" }
 
 """""""""""""""""""""""""""""""""""""""""""""
 "               基本配置                    "
@@ -103,15 +129,6 @@ endfunc
 autocmd FileType erlang setlocal et sta sw=2 sts=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"		            	python相关设置			     		"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 将python tab改为四个空格
-autocmd FileType python setlocal et sta sw=4 sts=4
-" 以缩进为折叠依据
-autocmd FileType python setlocal foldmethod=indent
-set foldlevel=99
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "						taglist设置							"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let Tlist_Auto_Open=1 " 自动打开taglist
@@ -180,7 +197,7 @@ let g:winManagerWidth = 35 " winmanager宽度 默认为25
 "					插件A									"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  Ctrl+j+p键实现头/源文件之间跳转	
-nnoremap <c-j><c-p> :A<CR>
+"  nnoremap <c-j><c-p> :A<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
