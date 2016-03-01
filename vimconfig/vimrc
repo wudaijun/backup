@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""
-"				Bundle List		 		   "
+"               Bundle List                "
 """"""""""""""""""""""""""""""""""""""""""""
 set nocompatible                " be iMproved
 filetype off                    " required!
@@ -23,19 +23,19 @@ Bundle "jlanzarotta/bufexplorer"
 " Bundle 'scrooloose/syntastic'
 
 """""""""""""""""""""""""""""""""""""""""""""
-" 在行末显示空格						    "
+"               在行末显示空格              "
 """""""""""""""""""""""""""""""""""""""""""""
 " show tabs and spaces at the end of line
 set list
 set listchars=""
 if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-	set listchars=tab:»\ 
-	set listchars+=trail:·
-	"set listchars+=eol:¶
+    set listchars=tab:»\ 
+    set listchars+=trail:·
+    "set listchars+=eol:¶
 else
-	set listchars=tab:>\ 
-	set listchars+=trail:.
-	"set listchars+=eol:~
+    set listchars=tab:>\ 
+    set listchars+=trail:.
+    "set listchars+=eol:~
 endif
 
 " set indent for diff lang {
@@ -45,6 +45,8 @@ autocmd FileType c            set shiftwidth=4 | set expandtab
 autocmd FileType cpp          set shiftwidth=4 | set expandtab
 autocmd FileType lua          set shiftwidth=4 | set expandtab
 " }
+
+set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""
 "               基本配置                    "
@@ -77,7 +79,7 @@ set incsearch
 " 显示当前行号列号
 set ruler
 " 左侧显示行号
-set number	
+set number  
 " 按F2显示/隐藏左侧行号显示
 nnoremap <F2> : set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -105,31 +107,31 @@ nmap <c-k> <c-w><c-k>
 nmap <c-l> <c-w><c-l>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"					方便编译								"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   方便编译                      "
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F5> :call CompileAbout()<CR>
 func! CompileAbout()
-	exec "w"
-	if &filetype == 'c'
-		exec "!g++ % -o %<"
-		exec "! ./%<"
-	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "! ./%<"
-	elseif &filetype == 'sh'
-		:!./%
-	endif
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "! ./%<"
+    elseif &filetype == 'sh'
+        :!./%
+    endif
 endfunc
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"					erlang相关设置						   "
+"                  erlang相关设置                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType erlang setlocal et sta sw=2 sts=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"						taglist设置							"
+"                       taglist设置                         "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let Tlist_Auto_Open=1 " 自动打开taglist
 let Tlist_Show_One_File=1 " 不同时显示多个文件的tag 只显示当前文件的
@@ -138,25 +140,25 @@ let Tlist_Use_Right_Window=1 " 在右侧窗口显示taglist
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"					nerdcommenter							"
+"                   nerdcommenter                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 注释的时候自动加个空格, 强迫症必配
 let g:NERDSpaceDelims=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"						ctags								"
+"                      ctags                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 设定Ctags路径
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 " 自动加载当前目录tags文件
 if has("ctags")
-	if filereadable("tags")
-		set tags=tags
-	endif
+    if filereadable("tags")
+        set tags=tags
+    endif
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 						cscope								"
+"                       cscope                              "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 nnoremap fs :cs find s <C-R>=expand("<cword>")<CR><CR>
@@ -169,13 +171,13 @@ nnoremap fi :cs find i <C-R>=expand("<cword>")<CR><CR>
 nnoremap fd :cs find d <C-R>=expand("<cword>")<CR><CR>
 " 自动加载当前目录下的cscope.out
 if has("cscope")
-	if filereadable("cscope.out")
-		cs add ./cscope.out
-	endif
+    if filereadable("cscope.out")
+        cs add ./cscope.out
+    endif
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"					winmanager设置							"
+"                   winmanager设置                          "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " winmanager 管理NERDTree 和 BufExplorer 两个窗口 位于左侧
 let g:NERDTree_title='NERD Tree'
@@ -187,21 +189,21 @@ function! NERDTree_Start()
 endfunction
 
 function! NERDTree_IsValid()
-	return 1
+    return 1
 endfunction
 
-nmap wm : WMToggle<CR> " 打开winmanager的按键wm
+nmap wm : WMToggle<CR> :set buftype=<cr> " 打开winmanager的按键wm
 let g:winManagerWidth = 35 " winmanager宽度 默认为25
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"					插件A									"
+"                   插件A                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  Ctrl+j+p键实现头/源文件之间跳转	
+"  Ctrl+j+p键实现头/源文件之间跳转  
 "  nnoremap <c-j><c-p> :A<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"					NERDTree								"
+"                   NERDTree                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map wm :NERDTreeToggle<CR> 
 
@@ -210,7 +212,7 @@ set nocompatible
 set bs=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"						syntastic				    		 "
+"                       syntastic                            "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
