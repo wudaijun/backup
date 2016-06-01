@@ -154,6 +154,16 @@ map <F7> :! ctags -R <CR>
 "map <F8> :! ctags -R --languages=c++,erlang,lua<CR>
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   ctrlp                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"'c' - the directory of the current file.
+"'a' - the directory of the current file, unless it is a subdirectory of the cwd
+"'r' - the nearest ancestor of the current file that contains one of these directories or files: .git .hg .svn .bzr _darcs
+"'w' - modifier to "r": start search from the cwd instead of the current file's directory
+"0 or '' (empty string) - disable this feature.
+let g:ctrlp_working_path_mode = 'wa'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   nerdcommenter                           "
