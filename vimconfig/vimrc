@@ -43,7 +43,7 @@ endif
 
 " set indent for diff lang {
 autocmd FileType erlang       set shiftwidth=2 | set expandtab
-autocmd FileType python       set shiftwidth=2 | set expandtab
+autocmd FileType python       set shiftwidth=4 | set expandtab
 autocmd FileType c            set shiftwidth=4 | set expandtab
 autocmd FileType cpp          set shiftwidth=4 | set expandtab
 autocmd FileType lua          set shiftwidth=4 | set expandtab
@@ -198,14 +198,14 @@ let g:Cscope_OpenQuickfixWindow=1
 " 6或者e  —— 查找这个egrep匹配模式
 " 7或者f   —— 查找这个文件
 " 8或者i   —— 查找#include这个文件的文件（们）
-nnoremap fs :cs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap fg :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap fc :cs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap ft :cs find t <C-R>=expand("<cword>")<CR><CR>
-nnoremap fe :cs find e <C-R>=expand("<cword>")<CR><CR>
-nnoremap ff :cs find f <C-R>=expand("<cword>")<CR><CR>
-nnoremap fi :cs find i <C-R>=expand("<cword>")<CR><CR>
-nnoremap fd :cs find d <C-R>=expand("<cword>")<CR><CR>
+"nnoremap fs :cs find s <C-R>=expand("<cword>")<CR><CR>
+"nnoremap fg :cs find g <C-R>=expand("<cword>")<CR><CR>
+"nnoremap fc :cs find c <C-R>=expand("<cword>")<CR><CR>
+"nnoremap ft :cs find t <C-R>=expand("<cword>")<CR><CR>
+"nnoremap fe :cs find e <C-R>=expand("<cword>")<CR><CR>
+"nnoremap ff :cs find f <C-R>=expand("<cword>")<CR><CR>
+"nnoremap fi :cs find i <C-R>=expand("<cword>")<CR><CR>
+"nnoremap fd :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " 自动加载当前目录下的cscope.out
 if has("cscope")
