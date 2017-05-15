@@ -49,7 +49,6 @@ autocmd FileType cpp          set shiftwidth=4 | set expandtab
 autocmd FileType lua          set shiftwidth=4 | set expandtab
 " }
 
-set expandtab
 
 """""""""""""""""""""""""""""""""""""""""""""
 "               基本配置                    "
