@@ -14,7 +14,7 @@ Bundle 'EasyGrep'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jimenezrick/vimerl'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'toupeira/vim-desertink'
 Bundle "tpope/vim-fugitive"
